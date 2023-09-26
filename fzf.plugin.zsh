@@ -14,4 +14,9 @@ if command -v fzf &> /dev/null; then
         [ -f $FZF_HOME/shell/completion.zsh ] && source $FZF_HOME/shell/completion.zsh
         [ -f $FZF_HOME/shell/key-bindings.zsh ] && source $FZF_HOME/shell/key-bindings.zsh
     fi
+
+    if [ -n "${commands[fzf-share]}" ]; then
+        source "$(fzf-share)/key-bindings.zsh"
+        source "$(fzf-share)/completion.zsh"
+    fi
 fi
